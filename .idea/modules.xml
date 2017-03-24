@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning_android.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning_android.iml" group="JavaFXLearning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning_desktop.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning_desktop.iml" group="JavaFXLearning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning_embedded.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning_embedded.iml" group="JavaFXLearning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning_ios.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning_ios.iml" group="JavaFXLearning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning_main.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning_main.iml" group="JavaFXLearning" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/JavaFXLearning_test.iml" filepath="$PROJECT_DIR$/.idea/modules/JavaFXLearning_test.iml" group="JavaFXLearning" />
+    </modules>
+  </component>
+</project>

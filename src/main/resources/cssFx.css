@@ -1,0 +1,221 @@
+#addNew > .label {
+    -fx-graphic: url("icons/Add.png");
+
+}
+
+#delRec > .label {
+    -fx-graphic: url("icons/Remove.png");
+
+}
+
+#updateRec > .label {
+    -fx-graphic: url("icons/Modify.png");
+}
+
+#export > .label {
+    -fx-graphic: url("icons/Save.png");
+}
+
+#close > .label {
+    -fx-graphic: url("icons/Exit.png");
+}
+
+#about > .label {
+    -fx-graphic: url("icons/About.png");
+}
+
+#print > .label {
+    -fx-graphic: url("icons/Print.png");
+}
+
+#exportAll > .label {
+    -fx-graphic: url("icons/SaveAll.png");
+}
+
+#imageLabel {
+    -fx-text-fill: green;
+    -fx-font-size: 16px;
+}
+
+#resetFormButton {
+    -fx-graphic: url("icons/eraser.png");
+}
+
+.buttonsIcons {
+    -fx-content-display: right;
+    -fx-background-color: transparent;
+    -fx-text-fill: aliceblue;
+
+}
+#bp{
+    -fx-background-radius: 10;
+}
+
+#bp .button:hover {
+    -fx-border-color: darkgreen;
+    -fx-border-radius: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: yellow;
+    -fx-alignment: CENTER;
+
+}
+
+#addButton {
+    -fx-graphic: url("icons/Add.png");
+
+}
+
+#removeButton {
+    -fx-graphic: url("icons/Remove.png");
+
+}
+
+#updateButton {
+    -fx-graphic: url("icons/Modify.png");
+
+}
+
+#printButton {
+    -fx-graphic: url("icons/Print.png");
+
+}
+
+#exportSelectedButton {
+    -fx-graphic: url("icons/Save.png");
+
+}
+
+#exportAllButton {
+    -fx-graphic: url("icons/SaveAll.png");
+
+}
+
+.scroll-pane {
+    -fx-background-color: #333333;
+    -fx-background-radius: 10;
+}
+
+.text-field:focused {
+    -fx-border-color: lightskyblue;
+    -fx-border-width: 3px;
+    -fx-background-color: linear-gradient(to bottom, derive(-fx-text-box-border, -10%), -fx-text-box-border),
+    linear-gradient(from 0px 0px to 0px 5px, derive(-fx-control-inner-background, -9%), -fx-control-inner-background);
+}
+
+.text-field:hover {
+    -fx-border-color: green;
+    -fx-border-width: 3px;
+    -fx-border-radius: 10px;
+}
+
+#dobField {
+    -fx-background-radius: 10px;
+    -fx-font-size: 18px;
+}
+
+.text-field {
+    -fx-background-radius: 10px;
+    -fx-border-radius: 10px;
+    -fx-background-color: darkgray;
+    -fx-text-fill: black;
+    -fx-border-color: #333333;
+    -fx-background-insets: 100%;
+    -fx-prompt-text-fill: gray;
+}
+
+#scrollPane {
+    -fx-background-color: linear-gradient(to bottom right, rgba(76, 76, 76, 1) 0%, rgba(89, 89, 89, 1) 17%,
+    rgba(102, 102, 102, 1) 25%,
+    rgba(102, 102, 102, 1) 28%, rgba(102, 102, 102, 1) 29%, rgba(28, 28, 28, 1) 100%);
+}
+
+
+
+.table-row-cell {
+    -fx-background-color: -fx-table-cell-border-color, #616161;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-row-cell:odd {
+    -fx-background-color: -fx-table-cell-border-color, #424242;
+    -fx-background-insets: 0, 0 0 1 0;
+    -fx-padding: 0.0em; /* 0 */
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(#131313 0%, #424141 100%);
+}
+
+.table-view .column-header-background .label {
+    -fx-background-color: transparent;
+    -fx-text-fill: yellow;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-cell {
+    -fx-text-fill: aliceblue;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+
+}
+
+.table-view {
+    -fx-background-color: black;
+}
+
+.table-view:focused {
+    -fx-background-color: black;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: forestgreen;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.table-view:row-selection .table-row-cell:filled:hover {
+
+    -fx-border-color: yellow;
+    -fx-border-width: 2px;
+
+    -fx-text-fill: -fx-text-inner-color;
+}
+
+.date-picker {
+    -fx-font-size: 18px;
+}
+
+.date-picker-popup {
+    -fx-background-color: forestgreen;
+}
+
+.date-picker .label {
+    -fx-text-fill: black;
+}
+.menu-bar.label{
+    -fx-text-fill: white;
+}
+
+#pane{
+    -fx-background-color: transparent;
+    -fx-border-radius: 20px;
+}
+.undecorator-label-titlebar{
+    -fx-text-fill: white;
+}
+
+.context-menu{
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+}
+.label{
+    -fx-text-fill: white;
+}
+
+

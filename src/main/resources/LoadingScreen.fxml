@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" minHeight="600.0" minWidth="800.0" prefHeight="600.0"
+           prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111"
+           fx:controller="fx.main.LoadingScreenController">
+    <children>
+        <Pane minHeight="700.0" minWidth="900.0" prefHeight="700.0" prefWidth="900.0"/>
+        <ImageView fx:id="img" fitHeight="800.0" fitWidth="900.0" pickOnBounds="true">
+            <image>
+                <Image url="@../../libs/images/welcome.jpg"/>
+            </image>
+            <effect>
+                <InnerShadow color="#40403b"/>
+            </effect>
+        </ImageView>
+    </children>
+</StackPane>

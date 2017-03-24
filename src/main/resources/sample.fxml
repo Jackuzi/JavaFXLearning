@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane id="sp" fx:id="parent" fitToHeight="true" fitToWidth="true" hmax="0.0" minViewportHeight="600.0" minViewportWidth="800.0" stylesheets="@cssFx.css" vmax="0.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fx.main.Controller">
+    <BorderPane id="bp" fx:id="bp">
+        <left>
+            <TableView fx:id="memTable" onMouseClicked="#tableListener" BorderPane.alignment="CENTER">
+                <columns>
+                    <TableColumn id="id" fx:id="id" prefWidth="53.0" text="ID" />
+                    <TableColumn id="name" fx:id="name" prefWidth="97.0" text="Name" />
+                    <TableColumn id="surname" fx:id="surname" prefWidth="97.0" text="Surname" />
+                </columns>
+                <BorderPane.margin>
+                    <Insets bottom="10.0" left="10.0" />
+                </BorderPane.margin>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </TableView>
+        </left>
+        <top>
+            <VBox BorderPane.alignment="CENTER">
+                <MenuBar id="mb" fx:id="mb" stylesheets="@cssFx.css">
+                    <Menu mnemonicParsing="false" text="File">
+                        <MenuItem id="exportAll" fx:id="exportAll" mnemonicParsing="false" text="Export all as .xls" />
+                        <MenuItem id="export" fx:id="export" mnemonicParsing="false" text="Export as .xls" />
+                        <MenuItem id="print" fx:id="print" mnemonicParsing="false" text="Print" />
+                        <MenuItem id="close" fx:id="close" mnemonicParsing="false" onAction="#exit" text="Close" />
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Edit">
+                        <MenuItem id="addNew" fx:id="addNew" onAction="#addNew" styleClass="label" text="Add new record" />
+                        <MenuItem id="delRec" fx:id="delRec" mnemonicParsing="false" onAction="#delRec" text="Delete record" />
+                        <MenuItem id="updateRec" fx:id="updateRec" mnemonicParsing="false" onAction="#updateRec" text="Update record" />
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Help">
+                        <MenuItem id="about" fx:id="about" mnemonicParsing="false" text="About" />
+                    </Menu>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="40.0" />
+               </padding>
+                </MenuBar>
+                <HBox maxHeight="25.0">
+                    <ButtonBar maxHeight="50.0" minHeight="50.0">
+                        <buttons>
+                            <TextField fx:id="searchUserField" promptText="Search for user">
+                                <tooltip>
+                                    <Tooltip text="Table filter" />
+                                </tooltip>
+                            </TextField>
+                            <Button id="addButton" minWidth="170.0" mnemonicParsing="false" onAction="#addNew" onMouseClicked="#playClickSound" styleClass="buttonsIcons" text="Add New Record">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <Button id="updateButton" minWidth="170.0" mnemonicParsing="false" onAction="#updateRec" onMouseClicked="#playClickSound" styleClass="buttonsIcons" text="Update Record">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                            <Button id="removeButton" minWidth="170.0" mnemonicParsing="false" onAction="#delRec" onMouseClicked="#playClickSound" prefHeight="30.0" prefWidth="419.0" styleClass="buttonsIcons" text="Remove Record">
+                                <font>
+                                    <Font size="14.0" />
+                                </font>
+                            </Button>
+                        </buttons>
+                    </ButtonBar>
+                </HBox>
+            </VBox>
+        </top>
+        <center>
+            <ScrollPane id="scrollPane" styleClass="ui" BorderPane.alignment="CENTER_LEFT">
+                <BorderPane.margin>
+                    <Insets bottom="10.0" left="10.0" right="10.0" />
+                </BorderPane.margin>
+                <GridPane prefHeight="504.0" prefWidth="499.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="239.0" minWidth="10.0" prefWidth="224.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="338.0" minWidth="10.0" prefWidth="78.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="338.0" minWidth="10.0" prefWidth="226.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="22.0" minHeight="18.0" prefHeight="18.0" />
+                        <RowConstraints maxHeight="50.0" minHeight="18.0" prefHeight="27.0" />
+                        <RowConstraints maxHeight="32.0" minHeight="0.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="28.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                    <padding>
+                        <Insets left="20.0" />
+                    </padding>
+                    <TextField fx:id="nameField" maxWidth="200.0" promptText="Name" GridPane.rowIndex="2">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Name" />
+                        </tooltip>
+                    </TextField>
+                    <TextField fx:id="surField" maxWidth="200.0" promptText="Surname" GridPane.rowIndex="4">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Surname" />
+                        </tooltip>
+                    </TextField>
+                    <ComboBox fx:id="gBox" prefWidth="150.0" promptText="Gender" GridPane.rowIndex="9" />
+                    <TextField fx:id="cityField" maxWidth="200.0" promptText="City" GridPane.rowIndex="9">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="City" />
+                        </tooltip>
+                    </TextField>
+                    <TextField fx:id="postField" maxWidth="200.0" promptText="Postcode" GridPane.rowIndex="11">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Postcode" />
+                        </tooltip>
+                    </TextField>
+                    <TextField fx:id="phoneField" maxWidth="200.0" promptText="phone number" GridPane.rowIndex="14">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Phone number" />
+                        </tooltip>
+                    </TextField>
+                    <ImageView fx:id="imgField" fitHeight="165.0" fitWidth="164.0" onMouseClicked="#changeProfile" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                        <Image url="images/avatar2.png" />
+                        <effect>
+                            <DropShadow />
+                        </effect>
+                    </ImageView>
+                    <TextField fx:id="streetField" maxWidth="200.0" promptText="Street" GridPane.columnIndex="2" GridPane.rowIndex="9">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Street" />
+                        </tooltip>
+                    </TextField>
+                    <TextField fx:id="countryField" maxWidth="200.0" promptText="Country" GridPane.columnIndex="2" GridPane.rowIndex="11">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Country" />
+                        </tooltip>
+                    </TextField>
+                    <TextField fx:id="emailField" maxWidth="200.0" promptText="email" GridPane.columnIndex="2" GridPane.rowIndex="14">
+                        <font>
+                            <Font name="Arial" size="18.0" />
+                        </font>
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Email" />
+                        </tooltip>
+                    </TextField>
+                    <Label style="-fx-text-fill: yellow;" text="Personal informations" GridPane.valignment="BOTTOM">
+                        <GridPane.margin>
+                            <Insets top="10.0" />
+                        </GridPane.margin>
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <Label style="-fx-text-fill: yellow;" text="Address details" GridPane.rowIndex="7" GridPane.valignment="BOTTOM">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <Label style="-fx-text-fill: yellow;" text="Contact Details" GridPane.rowIndex="12" GridPane.valignment="BOTTOM">
+                        <font>
+                            <Font size="14.0" />
+                        </font>
+                    </Label>
+                    <Separator prefHeight="0.0" prefWidth="58.0" valignment="TOP" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                    <Separator prefHeight="0.0" prefWidth="204.0" valignment="TOP" GridPane.rowIndex="7" />
+                    <Separator prefWidth="200.0" valignment="TOP" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                    <Separator prefWidth="200.0" valignment="TOP" GridPane.rowIndex="12" />
+                    <Separator prefWidth="200.0" valignment="TOP" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                    <Separator prefWidth="200.0" valignment="TOP" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                    <DatePicker id="datePicker" fx:id="dobField" editable="false" maxWidth="200.0" promptText="DoB(yyy-mm-dd)" showWeekNumbers="true" GridPane.rowIndex="6">
+                        <effect>
+                            <InnerShadow />
+                        </effect>
+                        <tooltip>
+                            <Tooltip text="Date of birth" />
+                        </tooltip>
+                    </DatePicker>
+                    <Label fx:id="label1" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Name:" visible="false" GridPane.rowIndex="1" />
+                    <Label fx:id="label2" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Surname:" visible="false" GridPane.rowIndex="3" />
+                    <Label fx:id="label3" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Date of birth" visible="false" GridPane.rowIndex="5" />
+                    <Label fx:id="label4" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="City:" visible="false" GridPane.rowIndex="8" />
+                    <Label fx:id="label5" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Postcode:" visible="false" GridPane.rowIndex="10" />
+                    <Label fx:id="label6" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Phone number:" visible="false" GridPane.rowIndex="13" />
+                    <Label fx:id="label7" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Email:" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="13" />
+                    <Label fx:id="label8" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" styleClass="myLabels" text="Country:" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                    <Label fx:id="label9" mnemonicParsing="true" opacity="0.44" style="-fx-text-fill: greenyellow;" text="street:" visible="false" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                </GridPane>
+                <effect>
+                    <DropShadow />
+                </effect>
+            </ScrollPane>
+        </center>
+        <bottom>
+            <HBox fillHeight="false" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets top="10.0" />
+                </BorderPane.margin>
+                <padding>
+                    <Insets bottom="10.0" />
+                </padding>
+                <ImageView fx:id="soundOff" onMouseClicked="#turnSound" pickOnBounds="true" preserveRatio="true">
+                    <HBox.margin>
+                        <Insets left="20.0" />
+                    </HBox.margin>
+                    <effect>
+                        <DropShadow />
+                    </effect>
+                </ImageView>
+                <ButtonBar buttonMinWidth="170.0" maxHeight="25.0" minHeight="25.0" HBox.hgrow="NEVER">
+                    <buttons>
+                        <Button id="resetFormButton" fx:id="resetFormButton" alignment="TOP_CENTER" mnemonicParsing="false" onAction="#resetForm" onMouseClicked="#playClickSound" styleClass="buttonsIcons" stylesheets="@cssFx.css" text="Reset form">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button id="printButton" mnemonicParsing="false" onMouseClicked="#playClickSound" styleClass="buttonsIcons" text="Print Record ">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button id="exportSelectedButton" mnemonicParsing="false" onMouseClicked="#playClickSound" styleClass="buttonsIcons" text="Export Selected">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                        <Button id="exportAllButton" mnemonicParsing="false" onMouseClicked="#playClickSound" styleClass="buttonsIcons" text="Export All">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Button>
+                    </buttons>
+                    <HBox.margin>
+                        <Insets left="80.0" />
+                    </HBox.margin>
+                </ButtonBar>
+            </HBox>
+        </bottom>
+    </BorderPane>
+   <effect>
+      <DropShadow />
+   </effect>
+</ScrollPane>
